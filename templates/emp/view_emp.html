@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f4f4f4;
+    }
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header">
+            <h3>Employee Details</h3>
+          </div>
+          {% for e in emps %}
+          <div class="card-body">
+            <h4 class="card-title" id="employeeName">{{e.name}}</h4>
+            <p class="card-text"><strong>Employee ID:</strong> <span id="employeeID">{{e.emp_id}}</span></p>
+            <p class="card-text"><strong>Phone:</strong> <span id="employeePhone">{{e.phone}}</span></p>
+            <p class="card-text"><strong>Working:</strong> <span id="employeeWorking">{{e.working}}</span></p>
+            <p class="card-text"><strong>Department:</strong> <span id="employeeDepartment">{{e.department}}</span></p>
+            <p class="card-text"><strong>Address:</strong> <span id="employeeAddress">{{e.address}}</span></p>
+           </div>
+        {% endfor %}
+        <a href="employee_list.html" class="btn btn-secondary">Back to Employee List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap JS (optional if you need JavaScript features) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
